@@ -1,0 +1,18 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #151d27; /* Tačna boja pozadine */
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+@layer utilities {  /* BOJA Choose language slova*/
+  .hover\:shadow-neon:hover {
+    box-shadow: 0px 0px 15px #1bffa8;
+  }
+}
