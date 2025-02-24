@@ -1,54 +1,29 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
-export default function Home() {
-  const router = useRouter();
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(true);
-  };
-
+export default function UnderConstruction() {
   const variants = {
     pulse: {
       scale: [1, 1.05, 1],
       transition: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' },
     },
-    warp: {
-      rotate: [0, 720],           // Dve pune rotacije
-      scale: [1, 0.5, 0],          // Postepeno smanjenje veličine
-      opacity: [1, 0.5, 0],        // Blag fade out do potpunog nestajanja
-      filter: ['blur(0px)', 'blur(4px)', 'blur(20px)'], // Efekat zamućenja
-      transition: { duration: 0.5 }, // Brza animacija
-    },
   };
 
   return (
     <div 
-      className="h-screen w-screen flex justify-center items-center"
-      style={{ backgroundColor: '#151d27' }}
-      onClick={handleClick}
+      className="h-screen w-screen flex flex-col justify-center items-center text-center p-4"
+      style={{ backgroundColor: '#151d27', color: '#ffffff' }}
     >
-      <motion.div
-        className="cursor-pointer"
+      <motion.h1 
+        className="text-3xl md:text-5xl font-bold"
         variants={variants}
-        animate={clicked ? 'warp' : 'pulse'}
-        onAnimationComplete={(definition) => {
-          if (definition === 'warp') {
-            router.push('/language');
-          }
-        }}
+        animate="pulse"
       >
-        <Image 
-          src="/metapolis-logo.png" 
-          alt="Metapolis Center Logo" 
-          width={700} 
-          height={700} 
-        />
-      </motion.div>
+        🚀 Website Under Construction / ajt je u izradi
+      </motion.h1>
+      <p className="mt-4 text-lg md:text-xl opacity-80">
+        We are working on something amazing. Stay tuned! / Radimo na nečemu sjajnom. Ostanite uz nas!
+      </p>
     </div>
   );
 }

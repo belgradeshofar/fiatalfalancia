@@ -88,6 +88,11 @@ export default function MediaResearchPage() {
           </motion.button>
         </motion.div>
       </div>
+
+
+
     </div>
+
+
   );
 }
