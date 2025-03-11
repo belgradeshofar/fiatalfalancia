@@ -39,6 +39,14 @@ export default function MainPage() {
   const filteredProjects =
     filter === 'svi' ? projects : projects.filter((p) => p.category === filter);
 
+  // Funkcija za automatsko skrolovanje do kontakt forme
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contactForm");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="font-inter text-gray-800">
       {/* HERO SEKCIJA */}
@@ -79,14 +87,14 @@ export default function MainPage() {
             <motion.button
               className="px-6 py-3 bg-blue-300 text-gray-800 rounded-full hover:bg-blue-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/inicijative')}
+              onClick={scrollToContact}
             >
               Uključi se u inicijative
             </motion.button>
             <motion.button
               className="px-6 py-3 bg-purple-300 text-gray-800 rounded-full hover:bg-purple-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/partnerstvo')}
+              onClick={scrollToContact}
             >
               Postani partner
             </motion.button>
@@ -115,8 +123,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-green-500 mb-2">Osnaživanje građana</h3>
@@ -125,8 +143,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-blue-500 mb-2">Zaštita životne sredine</h3>
@@ -135,8 +163,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-purple-500 mb-2">Podrška nezavisnim inicijativama</h3>
@@ -145,8 +183,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-yellow-500 mb-2">Povezivanje aktivista</h3>
@@ -235,7 +283,7 @@ export default function MainPage() {
             <motion.button
               className="px-6 py-3 bg-purple-300 text-gray-800 rounded-full hover:bg-purple-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/partnerstvo')}
+              onClick={scrollToContact}
             >
               Postani partner
             </motion.button>
@@ -274,8 +322,8 @@ export default function MainPage() {
         </div>
       </section>
 
-      {/* SEKCIJA VOLONTERA I SARADNIKA */}
-      <section className="py-16 bg-gray-50">
+      {/* SEKCIJA VOLONTERA I SARADNIKA – KONTAKT FORMA */}
+      <section id="contactForm" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Volonteri i Saradnici</h2>
           <p className="text-center text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">

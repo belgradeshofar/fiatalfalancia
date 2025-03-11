@@ -39,6 +39,14 @@ export default function MainPage() {
   const filteredProjects =
     filter === 'all' ? projects : projects.filter((p) => p.category === filter);
 
+  // Function to scroll automatically to the contact form section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contactForm");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="font-inter text-gray-800">
       {/* HERO SECTION */}
@@ -79,14 +87,14 @@ export default function MainPage() {
             <motion.button
               className="px-6 py-3 bg-blue-300 text-gray-800 rounded-full hover:bg-blue-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/initiatives')}
+              onClick={scrollToContact}
             >
               Get Involved in Initiatives
             </motion.button>
             <motion.button
               className="px-6 py-3 bg-purple-300 text-gray-800 rounded-full hover:bg-purple-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/partnership')}
+              onClick={scrollToContact}
             >
               Become a Partner
             </motion.button>
@@ -115,8 +123,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-green-500 mb-2">Empowering Citizens</h3>
@@ -125,8 +143,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-blue-500 mb-2">Environmental Protection</h3>
@@ -135,8 +163,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-purple-500 mb-2">Support for Independent Initiatives</h3>
@@ -145,8 +183,18 @@ export default function MainPage() {
             <motion.div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" whileHover={{ scale: 1.02 }}>
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 20l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 12l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M12 20l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 12l9-5-9-5-9 5 9 5z"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-yellow-500 mb-2">Connecting Activists</h3>
@@ -166,33 +214,25 @@ export default function MainPage() {
           {/* Filter Buttons */}
           <div className="flex justify-center space-x-4 mb-8">
             <button
-              className={`px-4 py-2 rounded-full ${
-                filter === 'all' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'
-              } transition`}
+              className={`px-4 py-2 rounded-full ${filter === 'all' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'} transition`}
               onClick={() => setFilter('all')}
             >
               All
             </button>
             <button
-              className={`px-4 py-2 rounded-full ${
-                filter === 'ecology' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'
-              } transition`}
+              className={`px-4 py-2 rounded-full ${filter === 'ecology' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'} transition`}
               onClick={() => setFilter('ecology')}
             >
               Ecology
             </button>
             <button
-              className={`px-4 py-2 rounded-full ${
-                filter === 'community' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'
-              } transition`}
+              className={`px-4 py-2 rounded-full ${filter === 'community' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'} transition`}
               onClick={() => setFilter('community')}
             >
               Community
             </button>
             <button
-              className={`px-4 py-2 rounded-full ${
-                filter === 'media' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'
-              } transition`}
+              className={`px-4 py-2 rounded-full ${filter === 'media' ? 'bg-green-300 text-gray-800' : 'bg-white text-gray-700'} transition`}
               onClick={() => setFilter('media')}
             >
               Media
@@ -235,7 +275,7 @@ export default function MainPage() {
             <motion.button
               className="px-6 py-3 bg-purple-300 text-gray-800 rounded-full hover:bg-purple-400 transition"
               whileHover={{ scale: 1.05 }}
-              onClick={() => router.push('/partnership')}
+              onClick={scrollToContact}
             >
               Become a Partner
             </motion.button>
@@ -274,8 +314,8 @@ export default function MainPage() {
         </div>
       </section>
 
-      {/* VOLUNTEERS & COLLABORATORS SECTION */}
-      <section className="py-16 bg-gray-50">
+      {/* VOLUNTEERS & COLLABORATORS SECTION – CONTACT FORM */}
+      <section id="contactForm" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Volunteers & Collaborators</h2>
           <p className="text-center text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
