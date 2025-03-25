@@ -74,7 +74,7 @@ export default function MainPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            MetaPolis Centar podržava ljude koji stvaraju bolji svet.
+            Metapolis Centar podržava ljude koji stvaraju bolji svet.
           </motion.p>
           <div className="flex flex-col md:flex-row gap-4">
             <motion.button
