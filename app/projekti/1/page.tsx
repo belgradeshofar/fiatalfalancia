@@ -17,13 +17,7 @@ export default function ZajednoZaPrirodu() {
       description: 'Ekološko istraživačko novinarstvo i aktivizam.',
       link: 'https://dosijepriroda.org', // link ka sajtu
     },
-    {
-      id: 2,
-      title: 'Zeleni Šakal',
-      category: 'ekologija',
-      description: 'Edukacija i zaštita prirode.',
-      link: 'https://www.facebook.com/zelenisakal', // link ka FB stranici
-    },
+
   ];
 
   const filteredProjects =
