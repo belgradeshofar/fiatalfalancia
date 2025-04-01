@@ -66,7 +66,7 @@ export default function MainPage() {
           >
             Za svet u kojem se svi glasovi čuju. <br />
             Za zajednice koje grade održivu budućnost. <br />
-            Za promene koje dolaze od nas.
+            Za promene koje dolaze od nas. *sajt u razvoju*
           </motion.h1>
           <motion.p
             className="text-white text-lg mb-8 max-w-2xl"
