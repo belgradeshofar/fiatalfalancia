@@ -7,14 +7,14 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <section className="relative w-full h-screen">
-      {/* Kontejner sa 3 slike iz public foldera */}
-      <div className="absolute inset-0 flex">
+      {/* Responsive kontejner: flex-col na mobilnim, flex-row na desktopu */}
+      <div className="absolute inset-0 flex flex-col md:flex-row">
         <div className="relative flex-1">
           <Image
             src="/fiat.jpg"
             alt="Luxury Fiat"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             quality={80}
             className="filter blur-sm"
           />
@@ -24,7 +24,7 @@ export default function Hero() {
             src="/alfa-romeo.jpg"
             alt="Luxury Alfa Romeo"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             quality={80}
             className="filter blur-sm"
           />
@@ -34,7 +34,7 @@ export default function Hero() {
             src="/lancia.jpg"
             alt="Luxury Lancia"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             quality={80}
             className="filter blur-sm"
           />
